@@ -8,19 +8,27 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useState } from "react";
 
 function Navbar() {
+
+const [open, setOpen] = useState(false)
+const toogleSheet = () => {
+  setOpen(!open)
+}
+
   return (
     <div className="flex container h-full mx-auto justify-between items-center px-6 bg-white">
       <div className="flex items-center gap-2">
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={open}>
             <SheetTrigger
               render={
                 <Button
                   variant="outline"
                   size="icon"
                   className="border-transparent"
+                  onClick={toogleSheet}
                 >
                   <Menu />
                 </Button>
@@ -41,16 +49,16 @@ function Navbar() {
 
               {/* Navigation Burger */}
               <nav className="flex flex-col gap-4 p-3">
-                <a href="#about" className="text-[16px]">
+                <a onClick={toogleSheet} href="#about" className="text-[16px]">
                   About
                 </a>
-                <a href="#skills" className="text-[16px]">
+                <a  onClick={toogleSheet} href="#skills" className="text-[16px]">
                   Skills
                 </a>
-                <a href="#experience" className="text-[16px]">
+                <a onClick={toogleSheet} href="#experience" className="text-[16px]">
                   Experiences
                 </a>
-                <a href="#work" className="text-[16px]">
+                <a onClick={toogleSheet} href="#work" className="text-[16px]">
                   Work
                 </a>
               </nav>
