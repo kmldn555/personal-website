@@ -1,6 +1,7 @@
 function TestimonialSection() {
   return (
-    <div className="container h-full mx-auto justify-between items-center py-8 px-6 bg-[#F2F3FF]">
+    <div className="bg-[#F2F3FF]">
+      <div className="container h-full mx-auto justify-between items-center py-8 px-6" >
       <div className="text-[11px] bg-[#C9E6FF] w-fit py-1 px-2.5 rounded-md font-bold text-[#2563EB] flex gap-2">
         <img src="IconEndorsement.svg" alt="IconEndorsement" />
         ENDORSEMENT
@@ -102,6 +103,8 @@ function TestimonialSection() {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 }
 
